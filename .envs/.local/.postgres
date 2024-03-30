@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=made_by_carson
+POSTGRES_USER=QoBxEjmXqzpOlowXJIacHpdvQkoMEXqe
+POSTGRES_PASSWORD=mSan1ZpS1mHnus9OIUTZpkdwocUG6clJRnu4MkaU9N1wwxt71ERWYIewvgWFpbX5
