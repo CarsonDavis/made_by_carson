@@ -88,7 +88,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generati
 
 Follow these instructions to generate a new ssh key and add it to the ssh-agent. Then add the key to the github repository.
 
-### Docker on the Server
+### Install Docker on the Server
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
 
