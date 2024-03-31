@@ -81,17 +81,34 @@ You must set the DSN url in production.
 
 ## Deployment
 
-If you are setting up the server for the first time, create an aliases file with the following commands:
+If you are setting up the server for the first time, you'll need to follow a few steps:
+
+### Github Deploy Key
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
+
+Follow these instructions to generate a new ssh key and add it to the ssh-agent. Then add the key to the github repository.
+
+### Install Docker on the Server
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
+
+### Alias File
+Not strictly necessary, but nice to have.
+add the following to your .bashrc file:
 
 ```bash
-docker compose -f local.yml run --rm django python manage.py migrate
-docker compose -f local.yml run --rm django python manage.py createsuperuser
+export COMPOSE_FILE='production.yml'
+source ~/.aliases
+```
 
+create a .aliases file with the following commands:
+
+```bash
 alias dmig='docker-compose -f production.yml run --rm django python manage.py migrate'
 alias dmshell='docker-compose -f production.yml run --rm django python manage.py shell_plus'
-alias dcupd='docker-compose up -d'
+alias dcup='docker-compose up -d --build'
 
-alias deploy='cd /home/ec2-user/projects_site;git pull;dmig;dcupd --build'
+alias deploy='cd /home/ec2-user/made_by_carson;git pull;dmig;dcup'
 ```
 
 ### Docker
