@@ -97,16 +97,16 @@ Not strictly necessary, but nice to have.
 add the following to your .bashrc file:
 
 ```bash
-export COMPOSE_FILE='production.yml'
+export COMPOSE_FILE='/home/ubuntu/made_by_carson/production.yml'
 source ~/.aliases
 ```
 
 create a .aliases file with the following commands:
 
 ```bash
-alias dmig='docker-compose -f production.yml run --rm django python manage.py migrate'
-alias dmshell='docker-compose -f production.yml run --rm django python manage.py shell_plus'
-alias dcup='docker-compose up -d --build'
+alias dmig='docker compose -f /home/ubuntu/made_by_carson/production.yml run --rm django python manage.py migrate'
+alias dmshell='docker compose -f /home/ubuntu/made_by_carson/production.yml run --rm django python manage.py shell_plus'
+alias dcup='docker compose -f /home/ubuntu/made_by_carson/production.yml up -d --build'
 
 alias deploy='cd /home/ec2-user/made_by_carson;git pull;dmig;dcup'
 ```
