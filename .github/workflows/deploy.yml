@@ -25,7 +25,7 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/ec2-user/made_by_carson
+          cd /home/ubuntu/made_by_carson
           docker compose -f /home/ubuntu/made_by_carson/production.yml down
           git pull origin master
           docker compose -f /home/ubuntu/made_by_carson/production.yml run --rm django python manage.py migrate
