@@ -104,11 +104,12 @@ source ~/.aliases
 create a .aliases file with the following commands:
 
 ```bash
+alias dcd='docker compose -f /home/ubuntu/made_by_carson/production.yml down'
 alias dmig='docker compose -f /home/ubuntu/made_by_carson/production.yml run --rm django python manage.py migrate'
 alias dmshell='docker compose -f /home/ubuntu/made_by_carson/production.yml run --rm django python manage.py shell_plus'
 alias dcup='docker compose -f /home/ubuntu/made_by_carson/production.yml up -d --build'
 
-alias deploy='cd /home/ec2-user/made_by_carson;git pull;dmig;dcup'
+alias deploy='cd /home/ec2-user/made_by_carson;dcd;git pull origin master;dmig;dcup'
 ```
 
 ### Docker
